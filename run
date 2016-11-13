@@ -1,0 +1,2 @@
+#!/bin/bash
+ ss-server -s 0.0.0.0 -p 13211 -k zxcwsaxsa -m aes-256-cfb -u
