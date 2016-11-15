@@ -10,7 +10,7 @@ RUN mkdir -p /ss &&\
 
 WORKDIR /ss
 
-ADD * /ss
+ADD * /ss/
 
 RUN chmod +x run
 
