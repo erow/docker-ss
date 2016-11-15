@@ -1,2 +1,10 @@
 #!/bin/bash
- ss-server -s 0.0.0.0 -p 13211 -k zxcwsaxsa -m aes-256-cfb -u
+if test $[is_client] -eq true
+then
+kcp="./client_linux_amd64"
+else
+kcp="./server_linux_amd64"
+fi
+
+$kcp -c kcp_ss.json &
+ss-server -s 0.0.0.0 -p 13211 -k zxcwsaxsa -m aes-256-cfb -u
