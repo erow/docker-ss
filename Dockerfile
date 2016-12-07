@@ -11,9 +11,8 @@ RUN  pip install shadowsocks
 WORKDIR /ss
 
 ADD * /ss/
-
 RUN chmod +x run
 
 EXPOSE 3128
 
-CMD /ss/run
+CMD ["/bin/bash", "-e", "./run"]
