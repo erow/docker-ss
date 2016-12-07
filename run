@@ -3,5 +3,6 @@ python gen.py
 
 kcp="./server_linux_amd64"
 
-$kcp -c kcp_ss.json &
 ssserver -c ss.json -d start
+$kcp -c kcp_ss.json
+
