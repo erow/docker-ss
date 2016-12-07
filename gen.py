@@ -23,8 +23,7 @@ kcp_cfg="""{
 "resend": 2,
 "nc": 1,
 "sockbuf": 4194304,
-"keepalive": 10,
-"log":"/log/kcp.log"
+"keepalive": 10
 }"""
 f=open('kcp_ss.json','w')
 f.write(kcp_cfg)
