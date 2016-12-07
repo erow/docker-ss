@@ -13,6 +13,6 @@ WORKDIR /ss
 ADD * /ss/
 RUN chmod +x run
 
-EXPOSE 3128
+EXPOSE 3128/udp
 
 CMD ["/bin/bash", "-e", "./run"]
