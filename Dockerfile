@@ -14,6 +14,6 @@ ADD * /ss/
 
 RUN chmod +x run
 
-EXPOSE 13211
+EXPOSE 3128
 
 CMD /ss/run

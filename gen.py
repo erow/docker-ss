@@ -3,6 +3,7 @@ env=os.environ
 
 port=3128
 
+env['mode']=env['crypt']=env['key']=env['sskey']='***'
 kcp_cfg="""{
 "listen": "0.0.0.0:3128",
 "target":"127.0.0.1:13121",
@@ -12,7 +13,7 @@ kcp_cfg="""{
 "datashard": 90,
 "parityshard": 10,
 """+\
-"\"mode\": \"${0}\",\n\"crypt\":\"${1}\",\n\"key\":\"${2}\","\
+"\"mode\": \"{0}\",\n\"crypt\":\"{1}\",\n\"key\":\"{2}\","\
     .format(env['mode'],env['crypt'],env['key'])\
 +"""
 "dscp": 46,
@@ -39,7 +40,7 @@ kcp_cfg="""{
 "datashard": 90,
 "parityshard": 10,
 """+\
-"\"mode\": \"${0}\",\n\"crypt\":\"${1}\",\n\"key\":\"${2}\","\
+"\"mode\": \"{0}\",\n\"crypt\":\"{1}\",\n\"key\":\"{2}\","\
     .format(env['mode'],env['crypt'],env['key'])\
 +"""
 "dscp": 46,
@@ -64,7 +65,7 @@ ss_cfg=\
 "server": "127.0.0.1",
 "server_port": 13121,
 """+\
-"\"password\": \"${0}\",".format(env['sskey'])+\
+"\"password\": \"{0}\",".format(env['sskey'])+\
 """
 "method": "aes-256-cfb"
 }

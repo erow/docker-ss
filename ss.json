@@ -1,6 +1,7 @@
+
 {
 "server": "127.0.0.1",
 "server_port": 13121,
-"password": "xutywernxz@a",
+"password": "***",
 "method": "aes-256-cfb"
 }
