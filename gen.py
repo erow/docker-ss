@@ -3,7 +3,6 @@ env=os.environ
 
 port=3128
 
-env['mode']=env['crypt']=env['key']=env['sskey']='***'
 kcp_cfg="""{
 "listen": "0.0.0.0:3128",
 "target":"127.0.0.1:13121",
