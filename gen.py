@@ -1,17 +1,18 @@
 import os
 env=os.environ
-
-port=3128
+#env={'port':3128,'crypt':'as','key':'as','mode':'fast','remote':'111'}
+print(env)
+port=env['export']
 
 kcp_cfg="""{
-"listen": "0.0.0.0:3128",
-"target":"127.0.0.1:13121",
+"target":"127.0.0.1:8388",
 "mtu": 1450,
 "sndwnd": 876,
 "rcvwnd": 876,
 "datashard": 90,
 "parityshard": 10,
 """+\
+'"listen": "0.0.0.0:{0},"\n'.format(port)+\
 "\"mode\": \"{0}\",\n\"crypt\":\"{1}\",\n\"key\":\"{2}\","\
     .format(env['mode'],env['crypt'],env['key'])\
 +"""
@@ -30,8 +31,7 @@ f.write(kcp_cfg)
 
 
 kcp_cfg="""{
-"localaddr":"0.0.0.0:12345",
-"remoteaddr": " :12345",
+"localaddr":"0.0.0.0:8388",
 "mtu": 1450,
 "sndwnd": 876,
 "rcvwnd": 876,
@@ -40,6 +40,7 @@ kcp_cfg="""{
 """+\
 "\"mode\": \"{0}\",\n\"crypt\":\"{1}\",\n\"key\":\"{2}\","\
     .format(env['mode'],env['crypt'],env['key'])\
++'"\nremoteaddr": "{0}:{1}",'.format(env['remote'],port)\
 +"""
 "dscp": 46,
 "nocomp": false,
@@ -60,10 +61,8 @@ f.write(kcp_cfg)
 ss_cfg=\
 """
 {
-"server": "127.0.0.1",
-"server_port": 13121,
 """+\
-"\"password\": \"{0}\",".format(env['sskey'])+\
+"\"password\": \"{0}\",".format(env['key'])+\
 """
 "method": "aes-256-cfb"
 }

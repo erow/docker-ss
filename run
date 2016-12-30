@@ -1,8 +1,13 @@
 #!/bin/bash
-python gen.py
 
-kcp="./server_linux_amd64"
+if [ "true" = "$is_server" ];then
+    kcp="./server_linux_amd64"
+    ss="sslocal"
+else
+    kcp="./client_linux_amd64"
+    ss="ssserver"
+fi
 
-ssserver -c ss.json -d start
+$ss -c ss.json -d start
 $kcp -c kcp_ss.json
 
