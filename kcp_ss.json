@@ -5,9 +5,10 @@
 "rcvwnd": 876,
 "datashard": 90,
 "parityshard": 10,
-"listen": "0.0.0.0:3128",
+"listen": "0.0.0.0:3128,"
 "mode": "fast",
-"key":"as",
+"crypt":"salsa20",
+"key":"asdfx",
 "dscp": 46,
 "nocomp": false,
 "acknodelay": false,
