@@ -3,12 +3,12 @@ FROM index.docker.io/library/python
 
 MAINTAINER erow clouderow@gmail.com
 
-RUN mkdir -p /ss
+RUN mkdir -p /sss
 RUN  pip install shadowsocks
-WORKDIR /ss
 
-ADD * /ss/
-RUN chmod +x run
+ADD * /sss/
+WORKDIR /sss
+RUN chmod +x run client_linux_amd64 server_linux_amd64
 
 ENV crypt salsa20
 ENV key zxcjwejhrk
@@ -20,5 +20,5 @@ ENV export 3128
 RUN python gen.py
 EXPOSE 3128/udp
 
-CMD ["/bin/bash", "-e", "./run"]
+CMD ["/bin/bash", "-e", "/sss/run"]
 

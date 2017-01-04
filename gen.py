@@ -11,7 +11,7 @@ kcp_cfg="""{
 "datashard": 90,
 "parityshard": 10,
 """+\
-'"listen": "0.0.0.0:{0},"\n'.format(port)+\
+'"listen": "0.0.0.0:{0}",\n'.format(port)+\
 "\"mode\": \"{0}\",\n\"crypt\":\"{1}\",\n\"key\":\"{2}\","\
     .format(env['mode'],env['crypt'],env['key'])\
 +"""
