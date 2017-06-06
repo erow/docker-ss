@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "true" = "$is_server" ];then
-    ssserver -c ss.json -d start -s 127.0.0.1
+    ssserver -c ss.json -d start
     ./server_linux_amd64 -c kcp_ss.json
 else
     sslocal -c ss.json -d start

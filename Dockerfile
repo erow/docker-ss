@@ -19,6 +19,8 @@ ENV export 3128
 
 RUN python gen.py
 EXPOSE 3128/udp
+EXPOSE 8388
+EXPOSE 8388/udp
 
 CMD ["/bin/bash", "-e", "/sss/run"]
 
