@@ -1,6 +1,7 @@
 import os
 env=os.environ
 #env={'port':3128,'crypt':'as','key':'as','mode':'fast','remote':'111'}
+print(env)
 port=env['export']
 
 kcp_cfg="""{
